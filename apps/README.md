@@ -1,6 +1,6 @@
 # Real-World Claude API Applications
 
-This directory contains 5 real-world applications demonstrating the Claude API concepts from the curriculum, in increasing complexity.
+This directory contains 10 real-world applications demonstrating the Claude API concepts from the curriculum, in increasing complexity. Apps 08-10 feature **Knowledge Graph** integration for context-aware AI reasoning.
 
 ## Application Overview
 
@@ -11,6 +11,11 @@ This directory contains 5 real-world applications demonstrating the Claude API c
 | 03 | GitHub Webhook Agent | ★★★☆☆ | Event-Driven, Webhooks, PR Review | 24/7 Daemon |
 | 04 | Event Orchestrator | ★★★★☆ | Multi-Source Events, Subagents, Priority Queue | 24/7 Daemon |
 | 05 | Self-Evolving Agent | ★★★★★ | Meta-Learning, Tool Generation, Prompt Evolution | Autonomous |
+| 06 | Multi-Agent Collaboration | ★★★★☆ | Team Coordination, Voting, Specialized Roles | Collaborative |
+| 07 | Codebase Maintainer | ★★★★☆ | Security Analysis, Dependency Updates, Auto-Fix | Autonomous |
+| 08 | Data Pipeline + KG | ★★★★★ | Simple Knowledge Graph, Entity Extraction, RAG | 24/7 Daemon |
+| 09 | Federated Concept Graph | ★★★★★ | Semantic Relationships, Distributed Learning | Distributed |
+| 10 | Agent OS + Full KG | ★★★★★ | Ontology, Inference, Temporal Awareness, RAG | Meta-System |
 
 ## Quick Start
 
@@ -24,6 +29,11 @@ bun run apps/02_document_qa.ts ./README.md "What is this about?"
 bun run apps/03_github_webhook_agent.ts
 bun run apps/04_event_orchestrator.ts
 bun run apps/05_self_evolving_agent.ts
+bun run apps/06_multi_agent_collab.ts
+bun run apps/07_codebase_maintainer.ts
+bun run apps/08_data_pipeline_kg.ts
+bun run apps/09_federated_concept_graph.ts
+bun run apps/10_agent_os_knowledge_graph.ts
 ```
 
 ## Application Details
@@ -202,23 +212,332 @@ bun run apps/05_self_evolving_agent.ts
 
 ---
 
+### 06: Multi-Agent Collaboration ★★★★☆
+
+A collaborative system where 5 specialized AI agents work together on complex tasks.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Multi-Agent Collaboration System                  │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
+│  │  Researcher  │  │   Architect  │  │    Coder     │              │
+│  │   (domain)   │  │   (design)   │  │  (implement) │              │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘              │
+│         │                 │                 │                       │
+│         └─────────────────┼─────────────────┘                       │
+│                           │                                          │
+│                    ┌──────▼──────┐                                  │
+│                    │ Coordinator │                                  │
+│                    │  (voting)   │                                  │
+│                    └──────┬──────┘                                  │
+│                           │                                          │
+│         ┌─────────────────┼─────────────────┐                       │
+│         │                 │                 │                       │
+│  ┌──────▼───────┐  ┌──────▼──────┐                                 │
+│  │   Reviewer   │  │    Tester   │                                 │
+│  │  (quality)   │  │  (verify)   │                                 │
+│  └──────────────┘  └─────────────┘                                 │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Workflow Phases:**
+1. **Research** - Researcher gathers domain knowledge
+2. **Design** - Architect creates implementation plan
+3. **Implement** - Coder writes the solution
+4. **Review** - Reviewer checks code quality
+5. **Test** - Tester verifies correctness
+
+**Demonstrates:**
+- Multi-agent coordination and communication
+- Democratic voting on decisions
+- Specialized agent roles
+- Phase-based task execution
+
+**Usage:**
+```bash
+bun run apps/06_multi_agent_collab.ts
+```
+
+---
+
+### 07: Autonomous Codebase Maintainer ★★★★☆
+
+A 24/7 agent that monitors and maintains code quality automatically.
+
+**Components:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Codebase Maintainer                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐        │
+│  │    Security    │  │   Dependency   │  │  Code Quality  │        │
+│  │    Analyzer    │  │    Analyzer    │  │    Analyzer    │        │
+│  └───────┬────────┘  └───────┬────────┘  └───────┬────────┘        │
+│          │                   │                   │                   │
+│          └───────────────────┼───────────────────┘                  │
+│                              │                                       │
+│                       ┌──────▼──────┐                               │
+│                       │ Fix Engine  │                               │
+│                       │  (auto-fix) │                               │
+│                       └──────┬──────┘                               │
+│                              │                                       │
+│                       ┌──────▼──────┐                               │
+│                       │   Report    │                               │
+│                       │  Generator  │                               │
+│                       └─────────────┘                               │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Features:**
+- Security vulnerability detection
+- Outdated dependency detection
+- Code quality analysis
+- Auto-fix generation
+- Continuous monitoring mode
+
+**Demonstrates:**
+- Autonomous code analysis
+- Pattern-based issue detection
+- AI-powered fix generation
+- Continuous monitoring
+
+**Usage:**
+```bash
+# Analyze current directory
+bun run apps/07_codebase_maintainer.ts
+
+# Continuous monitoring
+bun run apps/07_codebase_maintainer.ts --watch
+```
+
+---
+
+### 08: Real-Time Data Pipeline with Knowledge Graph ★★★★★
+
+A streaming data pipeline that builds a knowledge graph in real-time for context-aware AI responses.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Data Pipeline with Knowledge Graph                │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Events Stream    ┌─────────────────────────────────────────────┐   │
+│       │           │         Simple Knowledge Graph               │   │
+│       ▼           │                                              │   │
+│  ┌─────────┐      │    [User] ──performs──> [Action]            │   │
+│  │ Entity  │──────│           ──involves──> [Product]           │   │
+│  │Extractor│      │    [Action] ──occurred_at──> [Location]     │   │
+│  └────┬────┘      │                                              │   │
+│       │           └─────────────────────────────────────────────┘   │
+│       ▼                           │                                  │
+│  ┌─────────┐                      │                                  │
+│  │ Anomaly │◄─────────────────────┘                                  │
+│  │Detector │ (KG-aware detection)                                    │
+│  └────┬────┘                                                         │
+│       │                                                              │
+│       ▼                                                              │
+│  ┌──────────────┐                                                   │
+│  │ KG-Aware     │  Context = get_context_for_entity(entity_id)     │
+│  │ AI Agent     │  Response = agent.respond(query, context)         │
+│  └──────────────┘                                                   │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Knowledge Graph Features:**
+- Entity extraction from streaming events
+- Automatic relationship discovery
+- Graph traversal for context retrieval
+- Path finding between entities
+
+**Demonstrates:**
+- Simple entity-relationship graphs
+- Real-time graph construction
+- RAG-style context enrichment
+- Graph-aware anomaly detection
+
+**Usage:**
+```bash
+bun run apps/08_data_pipeline_kg.ts
+```
+
+---
+
+### 09: Federated Concept Graph ★★★★★
+
+A privacy-preserving distributed learning system where multiple agents share concepts without sharing raw data.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│               Federated Learning with Concept Graphs                 │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                 │
+│  │   Medical   │  │  Finance    │  │    Tech     │                 │
+│  │    Agent    │  │   Agent     │  │   Agent     │                 │
+│  │  ┌───────┐  │  │  ┌───────┐  │  │  ┌───────┐  │                 │
+│  │  │Concept│  │  │  │Concept│  │  │  │Concept│  │                 │
+│  │  │ Graph │  │  │  │ Graph │  │  │  │ Graph │  │                 │
+│  │  └───┬───┘  │  │  └───┬───┘  │  │  └───┬───┘  │                 │
+│  └──────┼──────┘  └──────┼──────┘  └──────┼──────┘                 │
+│         │                │                │                         │
+│         └────────────────┼────────────────┘                         │
+│                          │ (share concepts, not data)               │
+│                   ┌──────▼──────┐                                   │
+│                   │  Knowledge  │                                   │
+│                   │ Aggregator  │                                   │
+│                   └──────┬──────┘                                   │
+│                          │                                          │
+│                   ┌──────▼──────┐                                   │
+│                   │   Global    │                                   │
+│                   │   Graph     │                                   │
+│                   └─────────────┘                                   │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Semantic Relationship Types:**
+- `is_a` - Taxonomy (diabetes is_a disease)
+- `part_of` - Composition (fever part_of symptoms)
+- `related_to` - Association
+- `causes` - Causation (virus causes infection)
+- `precedes` - Temporal ordering
+- `similar_to` - Semantic similarity
+
+**Features:**
+- Local learning from domain-specific data
+- Privacy-preserving knowledge sharing
+- Confidence scoring and evidence tracking
+- Cross-domain knowledge aggregation
+
+**Demonstrates:**
+- Concept extraction with semantic relationships
+- Federated learning patterns
+- Confidence-weighted aggregation
+- Multi-agent knowledge synthesis
+
+**Usage:**
+```bash
+bun run apps/09_federated_concept_graph.ts
+```
+
+---
+
+### 10: AI Agent Operating System ★★★★★
+
+A meta-system for spawning and managing AI agents, powered by a full ontology-based knowledge graph with inference capabilities.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                 AI Agent Operating System                            │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │              Full Knowledge Graph Engine                     │    │
+│  │                                                              │    │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │    │
+│  │  │  Ontology   │  │  Inference  │  │  Temporal   │         │    │
+│  │  │   Classes   │  │   Engine    │  │  Tracking   │         │    │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘         │    │
+│  │                                                              │    │
+│  │  Inference Rules:                                            │    │
+│  │    • transitive_is_a: A is_a B, B is_a C → A is_a C        │    │
+│  │    • transitive_precedes: A precedes B, B precedes C →      │    │
+│  │                           A precedes C                       │    │
+│  │                                                              │    │
+│  │  Provenance: source, method (direct|inferred|aggregated)    │    │
+│  └──────────────────────────┬──────────────────────────────────┘    │
+│                              │                                       │
+│                       ┌──────▼──────┐                               │
+│                       │    RAG      │  get_context_for_query(q)     │
+│                       │  Retriever  │  → relevant KG context        │
+│                       └──────┬──────┘                               │
+│                              │                                       │
+│  ┌───────────────────────────┼───────────────────────────────┐      │
+│  │                    Agent Scheduler                         │      │
+│  │                                                            │      │
+│  │   spawn()         execute()         recycle()             │      │
+│  │      │                │                 │                 │      │
+│  │   ┌──▼──┐         ┌──▼──┐          ┌──▼──┐              │      │
+│  │   │Agent│─────────│Agent│──────────│Agent│              │      │
+│  │   │Pool │         │ Run │          │Pool │              │      │
+│  │   └─────┘         └─────┘          └─────┘              │      │
+│  └───────────────────────────────────────────────────────────┘      │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Knowledge Graph Features:**
+- Full ontology with class hierarchies
+- Inference engine with transitive rules
+- Temporal awareness (valid_from, valid_until)
+- Provenance tracking (source, method, evidence)
+- Confidence decay over time
+
+**Agent OS Features:**
+- Dynamic agent spawning
+- Agent lifecycle management (pool → active → recycle)
+- RAG-style context injection
+- Token and task tracking
+
+**Demonstrates:**
+- Ontology-based knowledge representation
+- Automatic inference and reasoning
+- Temporal relationship modeling
+- Full RAG pipeline integration
+- Meta-level agent management
+
+**Usage:**
+```bash
+bun run apps/10_agent_os_knowledge_graph.ts
+```
+
+---
+
+## Knowledge Graph Progression
+
+Apps 08-10 demonstrate a progression of knowledge graph complexity:
+
+| App | Graph Type | Key Feature | Use Case |
+|-----|-----------|-------------|----------|
+| 08 | Simple Entity-Relationship | Basic nodes/edges | Real-time event processing |
+| 09 | Concept Graph | Semantic relationships, confidence | Distributed learning |
+| 10 | Full Ontology KG | Inference, temporal, provenance | Enterprise AI systems |
+
+**Recommended Libraries:**
+- **[Graphology](https://graphology.github.io/)** - Pure TypeScript graph library
+- **[Neo4j](https://neo4j.com/)** - Graph database with Cypher queries
+- **[Cytoscape.js](https://js.cytoscape.org/)** - Graph visualization
+
+---
+
 ## Curriculum Mapping
 
 Each app demonstrates concepts from multiple lessons:
 
-| Lesson | App 01 | App 02 | App 03 | App 04 | App 05 |
-|--------|--------|--------|--------|--------|--------|
-| 02: Messages | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 05: System Prompts | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 06: Custom Tools | | ✅ | ✅ | ✅ | ✅ |
-| 07: Streaming | ✅ | | | | |
-| 08: Subagents | | | | ✅ | |
-| 10: Sessions | ✅ | | | | |
-| 12: Error Handling | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 13: Structured Output | | ✅ | ✅ | | |
-| 14: Cost Tracking | | ✅ | | | |
-| 17: Checkpoints | | | | | ✅ |
-| 26: Vision/Documents | | ✅ | | | |
+| Lesson | 01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 |
+|--------|----|----|----|----|----|----|----|----|----|----|
+| 02: Messages | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 05: System Prompts | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 06: Custom Tools | | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 07: Streaming | ✅ | | | | | | | | | |
+| 08: Subagents | | | | ✅ | | ✅ | | | | ✅ |
+| 10: Sessions | ✅ | | | | | | | | | |
+| 12: Error Handling | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13: Structured Output | | ✅ | ✅ | | | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14: Cost Tracking | | ✅ | | | | | | | | ✅ |
+| 17: Checkpoints | | | | | ✅ | | | | | |
+| 26: Vision/Documents | | ✅ | | | | | | | | |
+| Knowledge Graphs | | | | | | | | ✅ | ✅ | ✅ |
 
 ## Environment Variables
 
