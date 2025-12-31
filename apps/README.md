@@ -1,6 +1,6 @@
 # Real-World Claude API Applications
 
-This directory contains 10 real-world applications demonstrating the Claude API concepts from the curriculum, in increasing complexity. Apps 08-10 feature **Knowledge Graph** integration for context-aware AI reasoning.
+This directory contains 17 real-world applications demonstrating the Claude API concepts from the curriculum, in increasing complexity. Apps 08-10 feature **Knowledge Graph** integration for context-aware AI reasoning. Apps 11-17 push into **futuristic/sci-fi territory** with experimental AI concepts.
 
 ## Application Overview
 
@@ -16,6 +16,13 @@ This directory contains 10 real-world applications demonstrating the Claude API 
 | 08 | Data Pipeline + KG | ★★★★★ | Simple Knowledge Graph, Entity Extraction, RAG | 24/7 Daemon |
 | 09 | Federated Concept Graph | ★★★★★ | Semantic Relationships, Distributed Learning | Distributed |
 | 10 | Agent OS + Full KG | ★★★★★ | Ontology, Inference, Temporal Awareness, RAG | Meta-System |
+| 11 | Dream Architect | ★★★★★ | Generative Worldbuilding, Consistency Graphs | Creative |
+| 12 | Swarm Intelligence | ★★★★★ | Micro-Agents, Pheromone Signals, Emergence | Experimental |
+| 13 | Synthetic Colleague | ★★★★★ | Persistent Personality, Mood Systems, Memory | Interactive |
+| 14 | Consciousness Stream | ★★★★★ | Thought Capture, Semantic Indexing, Synthesis | Personal |
+| 15 | Predictive Coder | ★★★★★ | Git Analysis, Pattern Recognition, Code Prediction | Autonomous |
+| 16 | Reality Diff Engine | ★★★★★ | Parallel Timelines, Multiverse Analysis, Divergence | Simulation |
+| 17 | Self-Improvement Lab | ★★★★★ | Meta-Prompting, Prompt Evolution, Self-Critique | Experimental |
 
 ## Quick Start
 
@@ -34,6 +41,15 @@ bun run apps/07_codebase_maintainer.ts
 bun run apps/08_data_pipeline_kg.ts
 bun run apps/09_federated_concept_graph.ts
 bun run apps/10_agent_os_knowledge_graph.ts
+
+# Futuristic Apps (11-17)
+bun run apps/11_dream_architect.ts
+bun run apps/12_swarm_intelligence.ts
+bun run apps/13_synthetic_colleague.ts
+bun run apps/14_consciousness_stream.ts
+bun run apps/15_predictive_coder.ts
+bun run apps/16_reality_diff.ts
+bun run apps/17_self_improvement_lab.ts
 ```
 
 ## Application Details
@@ -500,6 +516,419 @@ A meta-system for spawning and managing AI agents, powered by a full ontology-ba
 ```bash
 bun run apps/10_agent_os_knowledge_graph.ts
 ```
+
+---
+
+## Futuristic Apps (11-17)
+
+These applications push into sci-fi territory, exploring experimental AI concepts that feel like they're from the future.
+
+---
+
+### 11: Dream Architect ★★★★★
+
+A generative worldbuilding engine that creates entire universes from seed concepts while maintaining internal consistency through a knowledge graph.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Dream Architect                                  │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│   Seed Concept ──► ┌────────────────┐                               │
+│                    │  World Engine  │                               │
+│                    └───────┬────────┘                               │
+│                            │                                         │
+│         ┌──────────────────┼──────────────────┐                     │
+│         │                  │                  │                     │
+│  ┌──────▼──────┐   ┌──────▼──────┐   ┌──────▼──────┐              │
+│  │  Physical   │   │  Locations  │   │  Characters │              │
+│  │    Laws     │   │             │   │             │              │
+│  └─────────────┘   └─────────────┘   └─────────────┘              │
+│                            │                                         │
+│                    ┌───────▼────────┐                               │
+│                    │  Consistency   │                               │
+│                    │     Graph      │                               │
+│                    └────────────────┘                               │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**World Elements Generated:**
+- Physical Laws (gravity, magic, time, energy)
+- Locations (cities, wildlands, hidden places)
+- Characters (heroes, villains, neutral parties)
+- Factions (governments, cults, guilds)
+- Timeline (key historical events)
+- Artifacts (powerful items, relics)
+- Conflicts (wars, rivalries, mysteries)
+
+**Features:**
+- Consistency graph ensures no contradictions
+- Infinite drill-down exploration
+- Export to Markdown for writers
+- Query any aspect of the world
+
+**Usage:**
+```bash
+bun run apps/11_dream_architect.ts
+```
+
+**Commands:** `/create <seed>`, `/expand <element>`, `/query <question>`, `/export`
+
+---
+
+### 12: Swarm Intelligence Simulator ★★★★★
+
+Spawns 20-50 micro-agents that solve problems through emergent collective behavior, mimicking ant colony optimization.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Swarm Intelligence Simulator                      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│   Problem ──► ┌────────────────────────────────────────────────┐    │
+│               │                Signal Board                      │    │
+│               │  [pheromone trails, solutions, consensus level] │    │
+│               └──────────────────────┬─────────────────────────┘    │
+│                                      │                               │
+│         ┌────────────────────────────┼────────────────────────┐     │
+│         │              │             │           │            │     │
+│     ┌───▼───┐      ┌───▼───┐    ┌───▼───┐   ┌───▼───┐   ┌───▼───┐ │
+│     │ Queen │      │ Scout │    │ Scout │   │Worker │   │Worker │ │
+│     │(eval) │      │(find) │    │(find) │   │(build)│   │(build)│ │
+│     └───────┘      └───────┘    └───────┘   └───────┘   └───────┘ │
+│         │              │             │           │            │     │
+│         └──────────────┼─────────────┼───────────┼────────────┘     │
+│                        │             │           │                   │
+│                    [Leave pheromone trails]                         │
+│                        │                                             │
+│                 ┌──────▼──────┐                                     │
+│                 │  Consensus  │ ──► Solution                        │
+│                 │  Detection  │                                     │
+│                 └─────────────┘                                     │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Agent Roles:**
+- **Queen** (1): Evaluates solution quality, guides colony
+- **Scouts** (20%): Explore solution space, find new paths
+- **Messengers** (20%): Spread information, strengthen pheromones
+- **Workers** (60%): Build on promising solutions
+
+**Phases per Cycle:**
+1. Scouting - Explore new solution components
+2. Working - Build on best solutions
+3. Messaging - Update pheromone trails
+4. Queen Evaluation - Score all solutions
+5. Pheromone Decay - Old trails fade
+6. Consensus Check - Has swarm converged?
+
+**Usage:**
+```bash
+bun run apps/12_swarm_intelligence.ts
+```
+
+**Commands:** `/swarm <problem>`, `/status`, `/inject <idea>`
+
+---
+
+### 13: Synthetic Colleague ★★★★★
+
+A persistent AI persona that develops personality, moods, opinions, and memories over time - a digital colleague that grows with you.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Synthetic Colleague                             │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌─────────────────────────────────────────────────────────────┐    │
+│  │                    Personality System                         │    │
+│  │  Big Five: [openness, conscientiousness, extraversion,       │    │
+│  │            agreeableness, neuroticism]                        │    │
+│  │  Custom:   [humor, directness, curiosity, empathy, cynicism] │    │
+│  └─────────────────────────────────────────────────────────────┘    │
+│                            │                                         │
+│  ┌─────────────────────────┼─────────────────────────────────┐      │
+│  │         Mood System (Valence / Arousal / Dominance)        │      │
+│  │         Current: happy/sad × calm/excited × dominant/submissive  │
+│  └─────────────────────────┼─────────────────────────────────┘      │
+│                            │                                         │
+│         ┌──────────────────┼──────────────────┐                     │
+│         │                  │                  │                     │
+│  ┌──────▼──────┐   ┌──────▼──────┐   ┌──────▼──────┐              │
+│  │   Memory    │   │   Opinions  │   │   Quirks    │              │
+│  │   Store     │   │   System    │   │   Engine    │              │
+│  └─────────────┘   └─────────────┘   └─────────────┘              │
+│                                                                      │
+│  Persistent State: synthetic_colleague.json                         │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Personality Features:**
+- Big Five traits that influence response style
+- Mood that shifts based on conversation topics
+- Memories of past interactions
+- Strong opinions on topics they care about
+- Quirks and verbal habits
+- Personality drift over time (10% chance per interaction)
+
+**Usage:**
+```bash
+bun run apps/13_synthetic_colleague.ts
+```
+
+**Commands:** `/status`, `/introspect`, `/opinion <topic>`, `/mood`
+
+**Persistent Data:** `synthetic_colleague.json`
+
+---
+
+### 14: Consciousness Stream Recorder ★★★★★
+
+A memory palace for capturing and organizing thoughts with semantic indexing, temporal clustering, and AI-powered synthesis.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                   Consciousness Stream Recorder                      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Input ──► ┌────────────────────────────────────────────────────┐   │
+│            │              Thought Analyzer                        │   │
+│            │  • Topic extraction                                  │   │
+│            │  • Entity recognition                                │   │
+│            │  • Sentiment analysis                                │   │
+│            │  • Energy/complexity scoring                         │   │
+│            └────────────────────┬───────────────────────────────┘   │
+│                                 │                                    │
+│                          ┌──────▼──────┐                            │
+│                          │  Indexing   │                            │
+│                          │   Engine    │                            │
+│                          └──────┬──────┘                            │
+│                                 │                                    │
+│         ┌───────────────────────┼───────────────────────┐           │
+│         │                       │                       │           │
+│  ┌──────▼──────┐        ┌──────▼──────┐        ┌──────▼──────┐     │
+│  │Topic Index  │        │Entity Index │        │Temporal Index│    │
+│  └─────────────┘        └─────────────┘        └─────────────┘     │
+│                                 │                                    │
+│                          ┌──────▼──────┐                            │
+│                          │  Synthesis  │──► Daily summaries         │
+│                          │   Engine    │──► Pattern discovery       │
+│                          └─────────────┘──► Insight generation      │
+│                                                                      │
+│  Persistent State: consciousness_stream.json                        │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Thought Types:**
+- General thoughts (`/capture`)
+- Ideas (`/idea`) - tagged as creative
+- Questions (`/question`) - tagged for follow-up
+
+**Features:**
+- Semantic search across all thoughts
+- Automatic clustering of related thoughts
+- Natural language querying (`/ask`)
+- Daily synthesis generation
+- Pattern discovery across time
+
+**Usage:**
+```bash
+bun run apps/14_consciousness_stream.ts
+```
+
+**Commands:** `/capture`, `/idea`, `/question`, `/search`, `/ask`, `/recent`, `/synthesize`
+
+**Persistent Data:** `consciousness_stream.json`
+
+---
+
+### 15: Predictive Code Writer ★★★★★
+
+Learns from your git history to predict and pre-generate the code you're likely to write next.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Predictive Code Writer                          │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Git History ──► ┌────────────────────────────────────────────┐     │
+│                  │          Pattern Analyzer                   │     │
+│                  │  • Commit sequences                         │     │
+│                  │  • File change patterns                     │     │
+│                  │  • Time-of-day preferences                  │     │
+│                  │  • Feature → test correlations              │     │
+│                  └───────────────────┬────────────────────────┘     │
+│                                      │                               │
+│                               ┌──────▼──────┐                       │
+│                               │  Developer  │                       │
+│                               │   Profile   │                       │
+│                               └──────┬──────┘                       │
+│                                      │                               │
+│         ┌────────────────────────────┼────────────────────────┐     │
+│         │                            │                        │     │
+│  ┌──────▼──────┐             ┌──────▼──────┐          ┌──────▼──────┐
+│  │   TODOs &   │             │   Pattern   │          │  Prediction │
+│  │ Incomplete  │             │   Library   │          │    Engine   │
+│  │  Functions  │             │             │          │             │
+│  └─────────────┘             └─────────────┘          └──────┬──────┘
+│                                                               │
+│                                                        ┌──────▼──────┐
+│                                                        │  Pre-Gen    │
+│                                                        │    Code     │
+│                                                        └─────────────┘
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Analysis Features:**
+- Developer profile (active hours, commit patterns)
+- Coding patterns (e.g., "tests follow features")
+- File state analysis (TODOs, incomplete functions)
+- Commit sequence prediction
+
+**Usage:**
+```bash
+bun run apps/15_predictive_coder.ts
+```
+
+**Commands:** `/predict`, `/analyze`, `/learn`, `/stats`
+
+---
+
+### 16: Reality Diff Engine ★★★★★
+
+A multiverse simulator that explores parallel "what-if" reality branches and computes semantic diffs between alternate timelines.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Reality Diff Engine                             │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Scenario ──► ┌────────────────────────────────────────────┐        │
+│               │         Divergence Point Analyzer           │        │
+│               │  "Where could this timeline branch?"        │        │
+│               └───────────────────┬────────────────────────┘        │
+│                                   │                                  │
+│         ┌─────────────────────────┼─────────────────────────┐       │
+│         │              │          │           │             │       │
+│  ┌──────▼──────┐┌──────▼──────┐┌──────▼──────┐┌──────▼──────┐      │
+│  │  Timeline   ││  Timeline   ││  Timeline   ││  Timeline   │      │
+│  │   Alpha     ││    Beta     ││   Gamma     ││   Delta     │      │
+│  │  Choice A   ││  Choice B   ││  Choice C   ││  Choice D   │      │
+│  └──────┬──────┘└──────┬──────┘└──────┬──────┘└──────┬──────┘      │
+│         │              │              │              │               │
+│         └──────────────┴──────────────┴──────────────┘               │
+│                                   │                                  │
+│                            ┌──────▼──────┐                          │
+│                            │ Diff Engine │                          │
+│                            │ (pairwise)  │                          │
+│                            └──────┬──────┘                          │
+│                                   │                                  │
+│                            ┌──────▼──────┐                          │
+│                            │  Multiverse │                          │
+│                            │  Analysis   │                          │
+│                            └─────────────┘                          │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Analysis Outputs:**
+- Timeline event sequences
+- Semantic diffs between realities
+- Convergence points (what's true in ALL timelines)
+- Butterfly effects (small changes → huge impacts)
+- Optimal/worst timeline identification
+- ASCII multiverse visualization
+
+**Usage:**
+```bash
+bun run apps/16_reality_diff.ts
+```
+
+**Commands:** `/branch <scenario>`, `/explore <n>`, `/diff <a> <b>`, `/tree`
+
+---
+
+### 17: Recursive Self-Improvement Lab ★★★★★
+
+An experimental system where an AI agent analyzes its own outputs, identifies weaknesses, and iteratively improves its prompts through genetic-style evolution.
+
+**Architecture:**
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                  Recursive Self-Improvement Lab                      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  Task ──► ┌────────────────────────────────────────────────┐        │
+│           │              Execution Engine                    │        │
+│           │  (current best prompt variant)                   │        │
+│           └───────────────────┬────────────────────────────┘        │
+│                               │                                      │
+│                        ┌──────▼──────┐                              │
+│                        │Self-Critique│                              │
+│                        │   Module    │                              │
+│                        └──────┬──────┘                              │
+│                               │                                      │
+│         ┌─────────────────────┼─────────────────────┐               │
+│         │                     │                     │               │
+│  ┌──────▼──────┐      ┌──────▼──────┐      ┌──────▼──────┐         │
+│  │  Strengths  │      │  Weaknesses │      │ Capability  │         │
+│  │  Analysis   │      │  Detection  │      │    Gaps     │         │
+│  └─────────────┘      └──────┬──────┘      └─────────────┘         │
+│                              │                                       │
+│                       ┌──────▼──────┐                               │
+│                       │  Mutation   │                               │
+│                       │   Engine    │                               │
+│                       └──────┬──────┘                               │
+│                              │                                       │
+│         ┌────────────────────┼────────────────────┐                 │
+│         │                    │                    │                 │
+│  ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐           │
+│  │   Prompt    │     │   Prompt    │     │   Prompt    │           │
+│  │  Variant A  │     │  Variant B  │     │  Variant C  │           │
+│  └─────────────┘     └─────────────┘     └─────────────┘           │
+│                                                                      │
+│  Persistent State: self_improvement_lab.json                        │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+**Self-Improvement Loop:**
+1. Execute task with current best prompt
+2. Self-critique: score strengths, weaknesses
+3. Identify capability gaps
+4. Apply mutations (add specificity, structure, examples, etc.)
+5. Tournament: compare variants head-to-head
+6. Evolve: promote winners, cull losers
+7. Repeat
+
+**Mutation Strategies:**
+- `add_specificity` - More detailed instructions
+- `add_structure` - Require formatted output
+- `add_self_check` - Add verification step
+- `add_examples` - Request examples
+- `add_chain_of_thought` - Step-by-step reasoning
+- `add_persona` - Expert framing
+- And more...
+
+**Usage:**
+```bash
+bun run apps/17_self_improvement_lab.ts
+```
+
+**Commands:** `/run <task>`, `/evolve`, `/tournament`, `/meta`, `/introspect`, `/dashboard`
+
+**Persistent Data:** `self_improvement_lab.json`
 
 ---
 
