@@ -1,0 +1,8 @@
+{
+  "name": "claude-sdk-lessons",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "latest",
+    "@anthropic-ai/sdk": "^0.71.2"
+  }
+}
